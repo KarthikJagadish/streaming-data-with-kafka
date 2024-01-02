@@ -13,3 +13,8 @@ topic_list = []
 new_topic = NewTopic(name="bank_branch", num_partitions= 2, replication_factor=1)
 topic_list.append(new_topic)
 admin_client.create_topics(new_topics=topic_list)
+
+# Once new topics are created, we can easily check its configuration details using describe_configs() method
+configs = admin_client.describe_configs(
+    config_resources=[ConfigResource(ConfigResourceType.TOPIC, "bank_branch")])
+# This is same as running "kafka-topics.sh --bootstrap-server localhost:9092 --describe --topic bank_branch" in terminal
