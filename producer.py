@@ -16,7 +16,7 @@ producer.send("bank_branch", {'atmid':2, 'transid':101})
 # The second argument represents the message value in a Python dict format and will be serialized into bytes
 
 # The above producing message operation is equivalent to using kafka-console-producer.sh --topic in Kafka CLI client:
-# kafka-console-producer.sh --bootstrap-server localhost:9092 --topic bankbranch
+# kafka-console-producer.sh --bootstrap-server localhost:9092 --topic bank_branch
 
 producer.flush()
 
